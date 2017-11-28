@@ -248,6 +248,7 @@ class hasher : public Mixin<HashProvider>
 		return res.str();
 	}
 
+#ifndef DIGESTPP_NO_EXCEPTIONS
 	/** 
 	 * \brief Output binary digest into user-provided preallocated buffer.
 	 *
@@ -276,6 +277,7 @@ class hasher : public Mixin<HashProvider>
 		HashProvider copy(provider);
 		copy.final(buf);
 	}
+#endif
 
 	/** 
 	 * \brief Write binary digest into an output iterator.
